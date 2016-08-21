@@ -1,0 +1,33 @@
+{
+  "name": "gulp-multienv-approach",
+  "version": "0.0.1",
+  "description": "A gulp setup that can be used in multi env projects",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garusis/gulp-multienv-approach.git"
+  },
+  "keywords": [
+    "gulp",
+    "approach"
+  ],
+  "author": "Garusis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garusis/gulp-multienv-approach/issues"
+  },
+  "engines": {
+    "node": "5.7.0"
+  },
+  "homepage": "https://github.com/garusis/gulp-multienv-approach#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gutil": "^1.6.4",
+    "lodash": "^4.15.0",
+    "nconf": "^0.8.4",
+    "yargs": "^5.0.0"
+  }
+}

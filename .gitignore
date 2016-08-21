@@ -1,3 +1,5 @@
 # Created by garusis
 .idea
+node_modules
+bower_components
 !.gitkeep
