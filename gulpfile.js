@@ -15,10 +15,6 @@ const gulp = require('gulp'),
     nconf = require('nconf');
 
 
-const argv = yargs.argv;
-const pkg = loadJsonFile('./package.json', ErrorConstant.THROW_ERROR);
-const appName = pkg.name.toUpperCase() || 'NODE';
-
 /**
  * ErrorConstant Object
  *
@@ -46,6 +42,11 @@ ErrorConstant.WARNING = new ErrorConstant('WARNING', 'yellow');
  * @type {ErrorConstant}
  */
 ErrorConstant.SILENT_WARNING = new ErrorConstant('SILENT_WARNING', 'yellow');
+
+
+const argv = yargs.argv;
+const pkg = loadJsonFile('./package.json', ErrorConstant.THROW_ERROR);
+const appName = (pkg.name || 'NODE').toUpperCase();
 
 
 const defaults = {
@@ -126,6 +127,7 @@ function loadTasks(module, throwError) {
     throwError = throwError || ErrorConstant.SILENT_WARNING;
     try {
         require(module)(ENV);
+        gutil.log(`Loaded tasks in ${module}`);
     } catch (err) {
         handleError(err, throwError);
         return "";
@@ -138,7 +140,14 @@ function loadTasks(module, throwError) {
  * @returns {Object}
  */
 function loadConfFile(path) {
-    loadJsonFile(path, ErrorConstant.SILENT_WARNING)
+    try {
+        let conf = require(path);
+        gutil.log(`Loaded confs in ${path}`);
+        return conf;
+    } catch (err) {
+        handleError(err, ErrorConstant.WARNING);
+        return {};
+    }
 }
 
 /*
@@ -158,21 +167,13 @@ function loadConfFile(path) {
  * @param {String} [env]
  */
 function loadConfig(env) {
-    defaults[`${appName}_ENV`] = env || 'development';
-
-    nconf
-        .defaults(defaults)
-        .env()
-        .argv();
-
     let previousEnv = !!ENV;
+    ENV = require('./env').loadEnv(env);
 
-    ENV = nconf.get();
-
-    let conf = loadConfFile(path.join(ENV.GULP_CONF_DIR, 'config.json'));
-    let confLocal = loadConfFile(path.join(ENV.GULP_CONF_DIR, 'config.local.json'));
-    let confEnv = loadConfFile(path.join(ENV.GULP_CONF_DIR, `config.${ENV[`${appName}_ENV`]}.json`));
-    let confEnvLocal = loadConfFile(path.join(ENV.GULP_CONF_DIR, `config.${ENV[`${appName}_ENV`]}.local.json`));
+    let conf = loadConfFile(path.join(ENV.GULP_CONF_DIR, 'config'));
+    let confLocal = loadConfFile(path.join(ENV.GULP_CONF_DIR, 'config.local'));
+    let confEnv = loadConfFile(path.join(ENV.GULP_CONF_DIR, `config.${ENV[`${appName}_ENV`]}`));
+    let confEnvLocal = loadConfFile(path.join(ENV.GULP_CONF_DIR, `config.${ENV[`${appName}_ENV`]}.local`));
 
     ENV = _.defaultsDeep(confEnvLocal, confLocal, confEnv, conf, ENV);
 
@@ -182,8 +183,7 @@ function loadConfig(env) {
     loadTasks(path.join(ENV.GULP_TASKS_DIR, `tasks.${ENV[`${appName}_ENV`]}.local.js`));
 
     /**
-     * NOTE. Gulp have a limiting with load data in the async way. I can't use
-     * seraphim :(. BTW Seraphim can't load a failed file and continue the process.
+     * NOTE. Gulp have a limiting with load data in the async way.
      *
      * Step 1). Load Env Vars and Argvs. In gulp conf is possible that Argvs will be not required.
      * BUT can be used to send data to task.

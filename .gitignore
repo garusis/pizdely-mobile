@@ -1,5 +1,8 @@
 # Created by garusis
 .idea
 node_modules
-bower_components
+dist/*
+tmp/*
+src/components/*
 !.gitkeep
+!.gitignore

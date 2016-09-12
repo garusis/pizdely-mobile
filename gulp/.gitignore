@@ -1,0 +1,4 @@
+# Created by garusis
+# Usually you want to ignore .local files.
+# *.local.*
+!*.example

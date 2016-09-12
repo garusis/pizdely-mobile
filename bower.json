@@ -1,0 +1,53 @@
+{
+  "name": "GulpMultienvApproach",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garusis/gulp-multienv-approach.git"
+  },
+  "license": "MIT",
+  "author": "Marcos Javier Alvarez Maestre <garusis@gmail.com>",
+  "contributors": [
+    "Marcos Javier Alvarez Maestre <garusis@gmail.com>"
+  ],
+  "private": false,
+  "homepage": "https://github.com/garusis/gulp-multienv-approach#readme",
+  "dependencies": { /*Please, update your dependencies. These are examples*/
+    "angular-filter": "~0.5.8",
+    "angular-sanitize": "~1.5.3",
+    "angular-socialshare": "~1.4.5",
+    "bootstrap": "~3.3.6",
+    "animate.css": "~3.5.0",
+    "simple-line-icons": "~2.2.3",
+    "font-awesome": "~4.5.0",
+    "ngstorage": "~0.3.10",
+    "angular-ui-router": "~0.2.15",
+    "angular-ui-router.stateHelper": "~1.3.1",
+    "angular-resource": "~1.4.8",
+    "angular": "^1.5.5"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/*"
+      ]
+    },
+    "simple-line-icons": {
+      "main": [
+        "css/simple-line-icons.css",
+        "fonts/*"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap-theme.css",
+        "dist/fonts/*"
+      ]
+    }
+  }
+}

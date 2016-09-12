@@ -14,7 +14,10 @@
     "gulp",
     "approach"
   ],
-  "author": "Garusis",
+  "author": "Marcos Javier Alvarez Maestre <garusis@gmail.com>",
+  "contributors": [
+    "Marcos Javier Alvarez Maestre <garusis@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/garusis/gulp-multienv-approach/issues"
@@ -24,10 +27,35 @@
   },
   "homepage": "https://github.com/garusis/gulp-multienv-approach#readme",
   "devDependencies": {
+    "easy-livereload": "^1.2.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "main-bower-files": "^2.13.1",
+    "compression": "^1.6.2",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "graceful-fs": "^4.1.5",
     "gulp": "^3.9.1",
-    "gutil": "^1.6.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-flatten": "^0.3.0",
+    "gulp-header": "^1.8.7",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-less": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.9",
+    "http-auth": "^2.4.10",
+    "less-plugin-autoprefix": "^1.5.1",
     "lodash": "^4.15.0",
     "nconf": "^0.8.4",
-    "yargs": "^5.0.0"
+    "prerender-node": "^2.4.0",
+    "yargs": "^4.8.1"
   }
 }
