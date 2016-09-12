@@ -1,178 +1,25 @@
 <!DOCTYPE html>
-<html lang="es-CO" ng-app="jg.marlininternacional">
+<html lang="es-CO" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <title>Marlin Coach Intl.</title>
+    <title>myApp</title>
 
-    <base href="http://localhost/marlininternacional_web/development/" target="_self">
+    <base href="$$frontBaseTagURL$$" target="_self">
 
-    <!--injector:css-->
-    <link rel='stylesheet' href='assets/stylesheets/google-fonts.css'>
-    <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/stylesheets/animate.min.css">
-    <link rel="stylesheet" href="assets/stylesheets/jquery-ui.css">
-    <link rel="stylesheet" href="assets/stylesheets/simple-line-icons.css">
-    <link rel="stylesheet" href="assets/stylesheets/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/stylesheets/icon-font.css">
-    <link rel="stylesheet" href="assets/stylesheets/educa.css">
-    <link rel="stylesheet" href="assets/stylesheets/rs-plugin-themepunch-settings.css">
-    <link rel='stylesheet' href='assets/stylesheets/owl.carousel.min.css'>
-    <link rel='stylesheet' href='assets/stylesheets/owl.theme.default.min.css'>
-    <link rel='stylesheet' href='assets/stylesheets/angular-socialshare.min.css'>
-
-    <link rel='stylesheet' href='assets/less/slick.less'>
-    <link rel="stylesheet" href="assets/stylesheets/modules.css">
-    <!--endinjector-->
-
-    <!--[if lt IE 9]>
-    <!--injector:jscompatible-->
-    <script src="assets/js/html5shiv.js"></script>
-    <script src="assets/js/respond.min.js"></script>
-    <!--endinjector-->
-    <!--[endif]-->
+    <link rel="stylesheet" href="assets/css/vendors.min.css">
+    <link rel="stylesheet" href="assets/css/app.min.css">
 </head>
 <body>
 
-<div class="sidebar-menu-container" id="sidebar-menu-container">
-    <div class="sidebar-menu-push">
-        <div class="sidebar-menu-overlay"></div>
-
-        <div class="sidebar-menu-inner">
-            <ng-include src="::'modules/sundries/templates/header.html'"></ng-include>
-
-            <div id="search">
-                <button type="button" class="close">×</button>
-                <form>
-                    <input type="search" value="" placeholder="type keyword(s) here"/>
-                    <button type="submit" class="btn btn-primary"><span>Burcar</span></button>
-                </form>
-            </div>
-
-            <div ui-view>
-            </div>
-
-            <ng-include src="::'modules/sundries/templates/footer.html'"></ng-include>
-            <a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
-        </div>
-
-    </div>
-
-    <nav class="sidebar-menu slide-from-left">
-        <div class="nano">
-            <div class="content">
-                <ng-include src="::'modules/sundries/templates/responsive-menu.html'"></ng-include>
-                <nav class="responsive-menu">
-                    <ul>
-                        <li class="menu-item-has-children"><a href="#">Home</a>
-                            <ul class="sub-menu">
-                                <li><a href="index.html">Homepage 1</a></li>
-                                <li><a href="homepage-2.html">Homepage 2</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children"><a href="#">Courses</a>
-                            <ul class="sub-menu">
-                                <li><a href="courses-grid.html">Courses Grids</a></li>
-                                <li><a href="courses-list.html">Courses List</a></li>
-                                <li><a href="single-course.html">Single Course</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children"><a href="#">Events</a>
-                            <ul class="sub-menu">
-                                <li><a href="classic-events.html">Classic Events</a></li>
-                                <li><a href="calendar-events.html">Calendar Events</a></li>
-                                <li><a href="single-event.html">Single Event</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children"><a href="#">Pages</a>
-                            <ul class="sub-menu">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="our-teachers.html">Our Teachers</a></li>
-                                <li><a href="single-teacher.html">Single Teacher</a></li>
-                                <li><a href="gallery-4.html">Gallery 4 Columns</a></li>
-                                <li><a href="gallery-3.html">Gallery 3 Columns</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item-has-children"><a href="#">News</a>
-                            <ul class="sub-menu">
-                                <li><a href="classic-news.html">Classic News</a></li>
-                                <li><a href="grid-news.html">Grid News</a></li>
-                                <li><a href="single-post.html">Single Post</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </nav>
+<div ui-view>
 
 </div>
 
-<!--injector:livereload-->
 <script src="//localhost:35729/livereload.js"></script>
-<!--endinjector-->
 
-<!--injector:jscompatible-->
-<!--Basic libraries-->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/lodash.min.js"></script>
-<script src="assets/js/html2canvas.min.js"></script>
-<script src="assets/js/angular.min.js"></script>
-<!--End Basic libraries-->
-
-<!--Basic Plugins-->
-<script src="assets/js/owl.carousel.js"></script>
-<script src="assets/js/slick.min.js"></script>
-<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-<script src="assets/js/jquery.themepunch.tools.min.js"></script>
-<script src="assets/js/jquery.themepunch.revolution.min.js"></script>
-<!-- END SLIDER REVOLUTION 4.x SCRIPTS  -->
-
-<!--End Basic Plugins-->
-
-<!--Config Basic Plugins-->
-<script src="assets/js/plugins.js"></script>
-<script src="assets/js/custom.js"></script>
-<!--End Config Basic Plugins-->
-
-<!--Angular Extended Modules-->
-<script src="assets/js/ngStorage.min.js"></script>
-<script src="assets/js/angular-ui-router.min.js"></script>
-<script src="assets/js/angular-resource.min.js"></script>
-<script src="assets/js/jg-origins-manager.min.js"></script>
-<script src="assets/js/statehelper.min.js"></script>
-<script src="assets/js/angular-slick.min.js"></script>
-<script src="assets/js/angular-filter.min.js"></script>
-<script src="assets/js/angular-sanitize.min.js"></script>
-<script src="assets/js/angular-socialshare.min.js"></script>
-<!--End Angular Extended Modules-->
-
-<!--Angular App Modules-->
-<script src="modules/auth/configAuth.js"></script>
-<script src="modules/auth/controllersAuth.js"></script>
-<script src="modules/auth/runAuth.js"></script>
-<script src="modules/news/configNews.js"></script>
-<script src="modules/news/controllersNews.js"></script>
-<script src="modules/news/runNews.js"></script>
-<script src="modules/courses/configCourses.js"></script>
-<script src="modules/courses/controllersCourses.js"></script>
-<script src="modules/courses/runCourses.js"></script>
-<script src="modules/modules/configModules.js"></script>
-<script src="modules/modules/controllersModules.js"></script>
-<script src="modules/modules/runModules.js"></script>
-<script src="modules/utilities/configUtilities.js"></script>
-<script src="modules/utilities/directivesUtilities.js"></script>
-<script src="modules/utilities/filtersUtilities.js"></script>
-<script src="models/lb-services.js"></script>
-<script src="modules/bootstrap/configBootstrap.js"></script>
-<script src="modules/bootstrap/runBootstrap.js"></script>
-<!--End Angular App Modules-->
-
-<!--endinjector-->
-
-
+<script src="assets/js/vendors.min.js"></script>
+<script src="assets/js/app.min.js"></script>
 </body>
 </html>
