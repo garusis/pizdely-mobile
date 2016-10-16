@@ -9,6 +9,7 @@ const gulp = require('gulp'),
     fs = require('fs'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
+    babel = require("gulp-babel"),
     debug = require('gulp-debug'),
     concat = require('gulp-concat'),
     cleanCSS = require('gulp-clean-css'),
@@ -23,6 +24,7 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
     replace = require('gulp-replace'),
     size = require('gulp-size'),
+    sourcemaps = require("gulp-sourcemaps"),
     uglify = require('gulp-uglify'),
     watch = require('gulp-watch'),
     yargs = require('yargs');
@@ -194,8 +196,11 @@ module.exports = function (ENV) {
         let beforeReplacers = gulp
             .src(ENV.app.src.js)
             .pipe(size({title: 'app.js'}))
+            .pipe(sourcemaps.init())
+            .pipe(babel())
             .pipe(uglify())
             .pipe(concat('app.min.js'))
+            .pipe(sourcemaps.write("."))
             .pipe(size({title: 'app.min.js'}));
 
         _.forEach(ENV.app.replacers.js, function (replacer) {
@@ -207,9 +212,21 @@ module.exports = function (ENV) {
             .pipe(gulp.dest(ENV.app.dst.js, {overwrite: true}));
     }
 
-    gulp.task('app-less', ['build:clean'], appLessTask);
-    gulp.task('app-js', ['build:clean'], appJSTask);
-    gulp.task('build:app', ['build:clean', 'app-js', 'app-less']);
+    gulp.task('app-less', appLessTask);
+    gulp.task('app-js', appJSTask);
+
+    gulp.task('build:app-less', ['build:clean'], appLessTask);
+    gulp.task('build:app-js', ['build:clean'], appJSTask);
+
+    gulp.task('watch:app-less', function () {
+        return gulp.watch(ENV.app.src.less, ['app-less']);
+    });
+    gulp.task('watch:app-js', function () {
+        return gulp.watch(ENV.app.src.js, ['app-js']);
+    });
+
+    gulp.task('build:app', ['build:clean', 'build:app-js', 'build:app-less']);
+
 
     function htmlTask(htmlPaths, dirname) {
         let beforeReplacers = gulp.src(htmlPaths)
@@ -233,9 +250,20 @@ module.exports = function (ENV) {
         return htmlTask(ENV.app.src.htmlIndex, ENV.app.dst.htmlIndex);
     }
 
-    gulp.task('html-templates', ['build:clean'], htmlTemplates);
-    gulp.task('html-index', ['build:clean'], htmlIndex);
-    gulp.task('build:html', ['build:clean', 'html-index', 'html-templates']);
+    gulp.task('html-templates', htmlTemplates);
+    gulp.task('html-index', htmlIndex);
+
+    gulp.task('build:html-templates', ['build:clean'], htmlTemplates);
+    gulp.task('build:html-index', ['build:clean'], htmlIndex);
+
+    gulp.task('watch:html-templates', function () {
+        return gulp.watch(ENV.app.src.htmlTemplates, ['html-templates']);
+    });
+    gulp.task('watch:html-index', function () {
+        return gulp.watch(ENV.app.src.htmlIndex, ['html-index']);
+    });
+
+    gulp.task('build:html', ['build:clean', 'build:html-index', 'build:html-templates']);
 
 
     gulp.task('test', function () {
@@ -264,38 +292,9 @@ module.exports = function (ENV) {
     /**
      * Default task
      */
+    gulp.task('watch', ['watch:app-less', 'watch:app-js', 'watch:html-templates', 'watch:html-index']);
     gulp.task('buildAssets', ['build:clean', 'build:images', 'build:vendors', 'build:app', 'build:html', 'build:copy']);
-    gulp.task('default', ['buildAssets']);
-
-    /**
-     * Watch files
-     */
-    gulp.task('watch:html', function () {
-        gulp.watch(paths.html, ['html']);
-    });
-    gulp.task('watch:index', function () {
-        gulp.watch(paths.htmlIndex, ['index']);
-    });
-    gulp.task('watch:scripts', function () {
-        gulp.watch(paths.scripts, ['index', 'scripts']);
-    });
-    gulp.task('watch:vendorCss', function () {
-        gulp.watch(paths.vendorCss, ['index', 'vendorCss']);
-    });
-    gulp.task('watch:vendorJs', function () {
-        gulp.watch(paths.vendorJs, ['index', 'vendorJs']);
-    });
-    gulp.task('watch:less', function () {
-        gulp.watch(paths.less, ['index', 'less']);
-    });
-    gulp.task('watch:images', function () {
-        gulp.watch(paths.images, ['images']);
-    });
-    gulp.task('watch:fonts', function () {
-        gulp.watch(paths.fonts, ['fonts']);
-    });
-    gulp.task('watch', ['watch:fonts', 'watch:index', 'watch:html', 'watch:scripts', 'watch:less']);
-
+    gulp.task('default', ['buildAssets', 'watch']);
 
     /**
      * Task to run task and server as an specific environment.
