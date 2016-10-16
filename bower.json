@@ -12,7 +12,7 @@
   ],
   "private": false,
   "homepage": "https://github.com/garusis/gulp-multienv-approach#readme",
-  "dependencies": { /*Please, update your dependencies. These are examples*/
+  "dependencies": {
     "angular-filter": "~0.5.8",
     "angular-sanitize": "~1.5.3",
     "angular-socialshare": "~1.4.5",

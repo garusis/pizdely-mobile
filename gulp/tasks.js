@@ -9,7 +9,6 @@ const gulp = require('gulp'),
     fs = require('fs'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
-    babel = require("gulp-babel"),
     debug = require('gulp-debug'),
     concat = require('gulp-concat'),
     cleanCSS = require('gulp-clean-css'),
@@ -197,7 +196,6 @@ module.exports = function (ENV) {
             .src(ENV.app.src.js)
             .pipe(size({title: 'app.js'}))
             .pipe(sourcemaps.init())
-            .pipe(babel())
             .pipe(uglify())
             .pipe(concat('app.min.js'))
             .pipe(sourcemaps.write("."))
@@ -274,7 +272,7 @@ module.exports = function (ENV) {
 
     gulp.task('webserver', function () {
         gutil.log('Local front-end server started');
-        require('./app.js');
+        require('./../app.js');
     });
 
     /**
@@ -294,7 +292,7 @@ module.exports = function (ENV) {
      */
     gulp.task('watch', ['watch:app-less', 'watch:app-js', 'watch:html-templates', 'watch:html-index']);
     gulp.task('buildAssets', ['build:clean', 'build:images', 'build:vendors', 'build:app', 'build:html', 'build:copy']);
-    gulp.task('default', ['buildAssets', 'watch']);
+    gulp.task('default', ['buildAssets', 'watch','webserver']);
 
     /**
      * Task to run task and server as an specific environment.
