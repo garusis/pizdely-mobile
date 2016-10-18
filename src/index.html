@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-CO" ng-app="myApp">
+<html lang="es-CO" ng-app="pizdely.mobile" ng-strict-di>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -8,18 +8,17 @@
 
     <base href="$$frontBaseTagURL$$" target="_self">
 
-    <link rel="stylesheet" href="assets/css/vendors.min.css">
-    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="css/vendors.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
 </head>
 <body>
 
-<div ui-view>
-
-</div>
+<ion-nav-view>
+</ion-nav-view>
 
 <script src="//localhost:35729/livereload.js"></script>
 
-<script src="assets/js/vendors.min.js"></script>
-<script src="assets/js/app.min.js"></script>
+<script src="js/vendors.min.js"></script>
+<script src="js/app.min.js"></script>
 </body>
 </html>

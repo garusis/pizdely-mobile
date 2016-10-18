@@ -13,7 +13,7 @@
   "private": false,
   "homepage": "https://github.com/garusis/gulp-multienv-approach#readme",
   "dependencies": {
-    "angular-filter": "~0.5.8",
+    "angular-filter": "^0.5.11",
     "angular-sanitize": "~1.5.3",
     "angular-socialshare": "~1.4.5",
     "bootstrap": "~3.3.6",
@@ -24,10 +24,13 @@
     "angular-ui-router": "~0.2.15",
     "angular-ui-router.stateHelper": "~1.3.1",
     "angular-resource": "~1.4.8",
-    "angular": "^1.5.5"
+    "angular": "^1.5.5",
+    "ionic": "^1.3.1",
+    "lodash": "^4.16.4"
   },
   "resolutions": {
-    "angular": "1.5.8"
+    "angular": "^1.5.5",
+    "angular-ui-router": "~0.2.15"
   },
   "overrides": {
     "font-awesome": {

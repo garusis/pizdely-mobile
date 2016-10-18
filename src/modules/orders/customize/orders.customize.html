@@ -1,0 +1,46 @@
+<ion-view>
+    <ion-content id="order-container">
+        <div class="row order-title m-t-1">
+            <div class="col text-center">{{orderCtrl.view.title}}</div>
+            <div class="col text-center">Total: {{cusOrderCtrl.order.total|currency:'$':0}}</div>
+        </div>
+        <div class="row drop-container">
+            <div class="col text-center">
+                <img src="assets/images/pizza.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row view-options">
+                    <div class="col text-center"
+                         ng-class="{selected:cusOrderCtrl.view.currentItems === 'onMyPizza'}"
+                         ng-click="cusOrderCtrl.selectView('onMyPizza')"
+                    >
+                        Mi pizza
+                    </div>
+                    <div class="col text-center"
+                         ng-class="{selected:cusOrderCtrl.view.currentItems === 'toAdd'}"
+                         ng-click="cusOrderCtrl.selectView('toAdd')"
+                    >
+                        Para adiccionar
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="row additions m-t-1" ng-repeat="row in cusOrderCtrl.view.items|chunkBy:3">
+                            <div class="col col-33 ingredient text-right" ng-repeat="item in row">
+                                <span class="badge badge-assertive" ng-if="item.qty">{{item.qty}}</span>
+                                <div class="text-center">
+                                    <img ng-src="{{item.image}}">
+                                </div>
+                                <div class="text-center">
+                                    {{item.name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

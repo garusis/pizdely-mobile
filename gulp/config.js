@@ -10,7 +10,7 @@ module.exports = {
     ],
     'currentTime': currentTime,
     'images': {
-        'src': ['./src/assets/images/**/*.jpg', './src/assets/images/**/*.jpeg', './src/assets/images/**/*.png', './src/assets/images/**/*.gif'],
+        'src': ['./src/assets/images/**/*.jpg', './src/assets/images/**/*.jpeg', './src/assets/images/**/*.png', './src/assets/images/**/*.gif', './src/assets/images/**/*.svg'],
         'base': './src',
         'dst': './dist/'
     },

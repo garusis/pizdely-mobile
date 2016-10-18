@@ -40,12 +40,10 @@ if (ENV.USE_LIVERELOAD) {
     }));
 }
 
-app.use('/template/',express.static('./template')); //Any else static file don't need maxAge in local. It's a big problem
-
 if (ENV.MAX_AGE_DISABLED) {
-    app.use('/assets/',express.static(workDir)); //Any else static file don't need maxAge in local. It's a big problem
+    app.use('/',express.static(workDir)); //Any else static file don't need maxAge in local. It's a big problem
 } else {
-    app.use('/assets/',express.static(workDir, {maxAge: oneDay}));  //But in cloud all static files should have maxAge as a good practice.
+    app.use(express.static(workDir, {maxAge: oneDay}));  //But in cloud all static files should have maxAge as a good practice.
 }
 //app.use(express.static(workDir));
 

@@ -5,11 +5,11 @@ module.exports = {
         'replacers': {
             'js': {
                 fb: {search: '$$fbAppID$$', newVal: 'myDevelopmentFBAppID'},
-                api: {search: '$$appApiURL$$', newVal: 'myDevelopmentApiURL'}
+                api: {search: '$$appApiURL$$', newVal: 'http://localhost:4000/'}
             },
             'html': {
                 api: {search: '$$appApiURL$$', newVal: 'myLocalApiURL'},
-                base: {search: '$$frontBaseTagURL$$', newVal: 'myDevelopmentFrontTagBaseURL'}
+                base: {search: '$$frontBaseTagURL$$', newVal: 'http://localhost:4000/'}
             }
         }
     }

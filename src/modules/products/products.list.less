@@ -1,0 +1,26 @@
+#products-container {
+  .main-message {
+    border-bottom: #ddd solid 1px;
+    margin-bottom: 10px;
+  }
+
+  .size-options {
+    .option {
+      &:nth-child(2) {
+        border-left: #000000 solid 1px;
+        border-right: #000000 solid 1px;
+      }
+      &.selected {
+        text-decoration: underline;
+      }
+    }
+  }
+  .products-list {
+    .item-thumbnail-right {
+      padding-top: 16px;
+    }
+    .price {
+      color: green;
+    }
+  }
+}

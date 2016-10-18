@@ -196,7 +196,7 @@ module.exports = function (ENV) {
             .src(ENV.app.src.js)
             .pipe(size({title: 'app.js'}))
             .pipe(sourcemaps.init())
-            .pipe(uglify())
+            //.pipe(uglify())
             .pipe(concat('app.min.js'))
             .pipe(sourcemaps.write("."))
             .pipe(size({title: 'app.min.js'}));
@@ -292,7 +292,7 @@ module.exports = function (ENV) {
      */
     gulp.task('watch', ['watch:app-less', 'watch:app-js', 'watch:html-templates', 'watch:html-index']);
     gulp.task('buildAssets', ['build:clean', 'build:images', 'build:vendors', 'build:app', 'build:html', 'build:copy']);
-    gulp.task('default', ['buildAssets', 'watch','webserver']);
+    gulp.task('default', ['buildAssets', 'watch', 'webserver']);
 
     /**
      * Task to run task and server as an specific environment.
