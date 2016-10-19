@@ -1,0 +1,28 @@
+<ion-view>
+    <ion-content id="order-size-container">
+        <div class="row order-title m-t-1">
+            <div class="col text-center">{{orderCtrl.view.title}}</div>
+            <div class="col text-center">Total: {{sizeOrderCtrl.order.total|currency:'$':0}}</div>
+        </div>
+        <div class="row border-b">
+            <div class="col text-center image-container">
+                <img src="assets/images/pizza.png"/>
+            </div>
+        </div>
+        <div class="list size-list">
+            <a class="item item-thumbnail-right" ng-repeat="(key, val) in sizeOrderCtrl.product.basePrice" ui-sref="home.orders.data({orderId:sizeOrderCtrl.order.id, size:key})">
+                <img ng-src="{{::sizeOrderCtrl.product.img}}">
+                <div class="row">
+                    <div class="col">
+                        <h2 style="margin-top: 12px;">{{::sizeOrderCtrl.view.sizeOptions[key].label}}</h2>
+                        <p>{{::val| currency : '$' : 0}}</p>
+                    </div>
+                    <div class="col">
+                        <p class="text-center"><i class="icon ion-man"></i></p>
+                        <p>{{::sizeOrderCtrl.view.sizeOptions[key].qty}}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -7,7 +7,7 @@
     function $conf($stateProvider) {
         $stateProvider
             .state('home.orders', {
-                url: 'orders/',
+                url: 'orders/?{orderId:int}',
                 abstract: true,
                 views: {
                     'main': {
@@ -15,10 +15,15 @@
                         controller: 'OrderController',
                         controllerAs: 'orderCtrl'
                     }
+                },
+                resolve: {
+                    order: ['Order', '$stateParams', function (Order, $stateParams) {
+                        return Order.get({id: $stateParams.orderId});
+                    }]
                 }
             })
             .state('home.orders.customize', {
-                url: 'customize/?{orderId:int}',
+                url: 'customize/',
                 templateUrl: 'templates/orders.customize.html',
                 controller: 'CustomizeOrderController',
                 controllerAs: 'cusOrderCtrl',
@@ -30,6 +35,26 @@
                     order: ['Order', '$stateParams', function (Order, $stateParams) {
                         return Order.get({id: $stateParams.orderId});
                     }]
+                }
+            })
+            .state('home.orders.size', {
+                url: 'size/',
+                templateUrl: 'templates/orders.size.html',
+                controller: 'SizeOrderController',
+                controllerAs: 'sizeOrderCtrl',
+                cache: false,
+                data: {
+                    title: 'Tamaño'
+                }
+            })
+            .state('home.orders.data', {
+                url: 'data/?size',
+                templateUrl: 'templates/orders.data.html',
+                controller: 'DataOrderController',
+                controllerAs: 'dataOrderCtrl',
+                cache: false,
+                data: {
+                    title: 'Datos de entrega'
                 }
             });
     }

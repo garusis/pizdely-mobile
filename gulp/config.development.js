@@ -9,7 +9,7 @@ module.exports = {
             },
             'html': {
                 api: {search: '$$appApiURL$$', newVal: 'myLocalApiURL'},
-                base: {search: '$$frontBaseTagURL$$', newVal: 'http://localhost:4000/'}
+                base: {search: '$$frontBaseTagURL$$', newVal: '/'}
             }
         }
     }

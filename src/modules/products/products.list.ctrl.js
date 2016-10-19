@@ -36,6 +36,7 @@
                     product.additionals = _.map(product.additionals, function (ingredient) {
                         var additional = _.cloneDeep(ingredients[ingredient.id]);
                         additional.qty = ingredient.qty;
+                        additional.qty.total = _.reduce(additional.qty);
                         return additional;
                     });
                     return product;

@@ -1,0 +1,30 @@
+<ion-view>
+    <ion-content id="order-data-container">
+        <div class="row order-title m-t-1">
+            <div class="col text-center">{{orderCtrl.view.title}}</div>
+            <div class="col text-center">Total: {{dataOrderCtrl.order.total|currency:'$':0}}</div>
+        </div>
+        <div class="row border-b">
+            <div class="col text-center image-container">
+                <img src="assets/images/pizza.png"/>
+            </div>
+        </div>
+        <div class="list data-list">
+            <label class="item item-input">
+                <i class="icon ion-person placeholder-icon"></i>
+                <input type="text" placeholder="Nombre de quien recibe">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-android-call placeholder-icon"></i>
+                <input type="text" placeholder="Numero de contacto">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-ios-home placeholder-icon"></i>
+                <input type="text" placeholder="Lugar de entrega">
+            </label>
+        </div>
+        <div class="button-bar m-t-2">
+            <a class="button button-balanced" ng-click="dataOrderCtrl.getPizza()">Guardar</a>
+        </div>
+    </ion-content>
+</ion-view>

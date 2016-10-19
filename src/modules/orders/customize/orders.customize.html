@@ -4,9 +4,14 @@
             <div class="col text-center">{{orderCtrl.view.title}}</div>
             <div class="col text-center">Total: {{cusOrderCtrl.order.total|currency:'$':0}}</div>
         </div>
-        <div class="row drop-container">
-            <div class="col text-center">
-                <img src="assets/images/pizza.png">
+        <div class="row border-b">
+            <div class="col text-center drop-container">
+                <img src="assets/images/pizza.png"/>
+                <div class="drop-area" ng-class="{active: cusOrderCtrl.view.dropActive}">
+                    <div class="drop-left" ng-click="cusOrderCtrl.addToPizza('left')"></div>
+                    <div class="drop-right" ng-click="cusOrderCtrl.addToPizza('right')"></div>
+                    <div class="drop-all" ng-click="cusOrderCtrl.addToPizza('all')"></div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -28,8 +33,10 @@
                 <div class="row">
                     <div class="col">
                         <div class="row additions m-t-1" ng-repeat="row in cusOrderCtrl.view.items|chunkBy:3">
-                            <div class="col col-33 ingredient text-right" ng-repeat="item in row">
-                                <span class="badge badge-assertive" ng-if="item.qty">{{item.qty}}</span>
+                            <div class="col col-33 ingredient text-right" ng-repeat="item in row"
+                                 ng-class="{selected: cusOrderCtrl.view.curretSelected === item}"
+                                 ng-click="!item.qty && cusOrderCtrl.toggleAddToPizza(item)">
+                                <span class="badge badge-assertive" ng-if="item.qty">{{item.qty.total}}</span>
                                 <div class="text-center">
                                     <img ng-src="{{item.image}}">
                                 </div>
@@ -39,6 +46,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="button-bar m-t-2">
+                    <a class="button button-balanced" ui-sref="home.orders.size({orderId:cusOrderCtrl.order.id})">Pedir</a>
                 </div>
             </div>
         </div>

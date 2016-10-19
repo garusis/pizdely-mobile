@@ -1,8 +1,44 @@
 #order-container {
   .drop-container {
-    border-bottom: #000000 solid 1px;
-    img {
+    position: relative;
+    > * {
       width: 55%;
+    }
+    .drop-area{
+      position: absolute;
+      top: 0;
+      height: 100%;
+      left: 50%;
+      margin-left: -27.5%;
+      > * {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        width: 50%;
+      }
+      .drop-left{
+        left: 0;
+      }
+      .drop-right{
+        right: 0;
+      }
+      .drop-all{
+        left: 30%;
+        height: 40%;
+        width: 40%;
+        top: 30%;
+      }
+      &.active{
+        .drop-left{
+          background-color: rgba(90, 180, 90, 0.31);
+        }
+        .drop-right{
+          background-color: rgba(221, 57, 32, 0.31);
+        }
+        .drop-all{
+          background-color: rgba(25, 49, 210, 0.31);
+        }
+      }
     }
   }
   .view-options {
@@ -19,6 +55,9 @@
     .ingredient {
       img {
         width: 50%;
+      }
+      &.selected{
+        border: #000000 solid 1px;
       }
     }
   }

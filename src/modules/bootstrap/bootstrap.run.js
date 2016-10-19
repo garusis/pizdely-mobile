@@ -8,6 +8,7 @@
         $ionicPlatform.ready(function() {
 
         });
+        jQuery.event.addProp('dataTransfer');
     }
 
     module

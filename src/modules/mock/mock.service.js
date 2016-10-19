@@ -143,8 +143,8 @@
                     l: 50000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.pinha.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pinha.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -158,8 +158,8 @@
                     l: 51000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.pollo.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -173,8 +173,8 @@
                     l: 52000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.atun.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.atun.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -188,8 +188,8 @@
                     l: 53000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.carne.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.carne.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -203,9 +203,9 @@
                     l: 54000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.pollo.id, qty: 1},
-                    {id: ingredients.pinha.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pinha.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -219,9 +219,9 @@
                     l: 55000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.pollo.id, qty: 1},
-                    {id: ingredients.atun.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.atun.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -235,9 +235,9 @@
                     l: 56000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.pollo.id, qty: 1},
-                    {id: ingredients.pimienta.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pimienta.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -251,9 +251,9 @@
                     l: 57000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.pollo.id, qty: 1},
-                    {id: ingredients.carne.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.carne.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -267,9 +267,9 @@
                     l: 58000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.carne.id, qty: 1},
-                    {id: ingredients.atun.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.carne.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.atun.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             },
@@ -283,9 +283,9 @@
                     l: 59000
                 },
                 additionals: [
-                    {id: ingredients.queso.id, qty: 1},
-                    {id: ingredients.carne.id, qty: 1},
-                    {id: ingredients.pimienta.id, qty: 1}
+                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.carne.id, qty: {all:1, left:0, right:0}},
+                    {id: ingredients.pimienta.id, qty: {all:1, left:0, right:0}}
                 ],
                 img: 'assets/images/pizza.png'
             }

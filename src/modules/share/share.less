@@ -8,10 +8,18 @@ ion-header-bar {
   }
 }
 
-.m-t-0 {
-  margin-top: 0 !important;
+.toast_section {
+  background-color: #33cd5f !important;
 }
 
-.m-t-1 {
-  margin-top: 10px !important;
+.border-b {
+  border-bottom: #000000 solid 1px !important;
+}
+
+.generate-sec(m-t, margin-top);
+.generate-sec(@class, @property, @n:5, @multiplier:10px, @start: 0) when (@start =< @n) {
+  .@{class}-@{start} {
+      @{property}: (@start * @multiplier)!important;
+  }
+  .generate-sec(@class, @property, @n, @multiplier, (@start+1));
 }

@@ -24,6 +24,7 @@
 
 })(angular.module('pizdely.mobile', [
     'ionic',
+    'ionic-toast',
     'angular.filter',
     'pizdely.mobile.mock',
     'pizdely.mobile.orders',
