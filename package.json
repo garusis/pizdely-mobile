@@ -1,5 +1,4 @@
 {
-  "name": "pizzdely-mobile",
   "version": "0.0.1",
   "description": "A gulp setup that can be used in multi env projects",
   "main": "app.js",
