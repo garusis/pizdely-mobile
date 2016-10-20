@@ -61,7 +61,7 @@ app.all('/*', function (req, res, next) {
     // Just send the index.html for other files to support HTML5Mode
     res.sendFile(`${workDir}/index.html`, {root: __dirname});
 });
-console.log('asñldkasñldkasñldk http://0.0.0.0:' + (ENV.PORT || 4000));
+
 app.listen(ENV.PORT || 4000, function () {
     console.log('Pizzdely mobile listening on http://0.0.0.0:' + (ENV.PORT || 4000));
 });
