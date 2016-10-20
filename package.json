@@ -1,8 +1,8 @@
 {
-  "name": "gulp-multienv-approach",
+  "name": "pizzdely-mobile",
   "version": "0.0.1",
   "description": "A gulp setup that can be used in multi env projects",
-  "main": "gulpfile.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

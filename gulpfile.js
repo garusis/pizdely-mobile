@@ -46,7 +46,7 @@ ErrorConstant.SILENT_WARNING = new ErrorConstant('SILENT_WARNING', 'yellow');
 
 const argv = yargs.argv;
 const pkg = loadJsonFile('./package.json', ErrorConstant.THROW_ERROR);
-const appName = (pkg.name || 'NODE').toUpperCase();
+const appName = _.snakeCase(pkg.name || 'NODE').toUpperCase();
 
 
 const defaults = {
