@@ -18,7 +18,7 @@ if (require.main === module) {
 }
 let ENV = envLoader.ENV;
 
-let workDir = 'dist';
+let workDir = './dist';
 
 if (ENV.COMPRESSION_ENABLED)
     app.use(compression());
@@ -41,7 +41,7 @@ if (ENV.USE_LIVERELOAD) {
 }
 
 if (ENV.MAX_AGE_DISABLED) {
-    app.use('/',express.static(workDir)); //Any else static file don't need maxAge in local. It's a big problem
+    app.use(express.static(workDir)); //Any else static file don't need maxAge in local. It's a big problem
 } else {
     app.use(express.static(workDir, {maxAge: oneDay}));  //But in cloud all static files should have maxAge as a good practice.
 }
