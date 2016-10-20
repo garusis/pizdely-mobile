@@ -26,7 +26,7 @@
     "node": "4.3.2"
   },
   "homepage": "https://github.com/garusis/gulp-multienv-approach#readme",
-  "devDependencies": {
+  "dependencies": {
     "babel-preset-es2015": "^6.16.0",
     "compression": "^1.6.2",
     "del": "^2.2.2",
