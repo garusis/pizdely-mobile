@@ -1,5 +1,5 @@
 'use strict';
-console.log('asñdaksñdlaksdñlaksd');
+
 /**
  * Created by garusis on 5/03/16.
  */
@@ -63,5 +63,5 @@ app.all('/*', function (req, res, next) {
 });
 
 app.listen(ENV.PORT || 4000, function () {
-    console.log('Pizzdely mobile listening on http://0.0.0.0:' + (ENV.PORT || 4000));
+    console.log('Pizzdely movil listening on http://0.0.0.0:' + (ENV.PORT || 4000));
 });
