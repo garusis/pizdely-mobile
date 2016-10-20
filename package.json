@@ -4,6 +4,7 @@
   "description": "A gulp setup that can be used in multi env projects",
   "main": "app.js",
   "scripts": {
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

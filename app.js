@@ -63,5 +63,5 @@ app.all('/*', function (req, res, next) {
 });
 
 app.listen(ENV.PORT || 4000, function () {
-    console.log('Uniko listening on http://0.0.0.0:' + (ENV.PORT || 4000));
+    console.log('Pizzdely mobile listening on http://0.0.0.0:' + (ENV.PORT || 4000));
 });
