@@ -57,6 +57,7 @@ if (ENV.HTTP_AUTH) {
     app.use(auth.connect(digest));
 }
 
+
 app.all('/*', function (req, res, next) {
     // Just send the index.html for other files to support HTML5Mode
     res.sendFile(`${workDir}/index.html`, {root: __dirname});
