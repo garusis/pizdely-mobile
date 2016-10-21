@@ -135,12 +135,12 @@
         var products = [
             {
                 id: 1,
-                name: 'Pizza 1',
-                description: 'Queso + Piña',
+                name: 'Hawaiana',
+                description: 'Piña, Jamón',
                 basePrice: {
-                    sm: 20000,
-                    m: 30000,
-                    l: 50000
+                    sm: 10000,
+                    m: 15000,
+                    l: 30000
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
@@ -150,12 +150,12 @@
             },
             {
                 id: 2,
-                name: 'Pizza 2',
-                description: 'Queso + Pollo',
+                name: 'Caesar',
+                description: 'Pollo, Lechuga, Champiñones, Pimentón, Aceitunas',
                 basePrice: {
-                    sm: 21000,
-                    m: 31000,
-                    l: 51000
+                    sm: 10000,
+                    m: 15000,
+                    l: 35000
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
@@ -165,12 +165,12 @@
             },
             {
                 id: 3,
-                name: 'Pizza 3',
-                description: 'Queso + Atun',
+                name: 'Campesina',
+                description: 'Chorizo, Tocineta, Maíz, Hogao',
                 basePrice: {
-                    sm: 22000,
-                    m: 32000,
-                    l: 52000
+                    sm: 10000,
+                    m: 15000,
+                    l: 25000
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
@@ -180,12 +180,12 @@
             },
             {
                 id: 4,
-                name: 'Pizza 4',
-                description: 'Queso + Carne',
+                name: 'San Siro',
+                description: 'Pollo, Jamón, Champiñones',
                 basePrice: {
-                    sm: 23000,
-                    m: 33000,
-                    l: 53000
+                    sm: 10000,
+                    m: 15000,
+                    l: 35000
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
@@ -195,8 +195,8 @@
             },
             {
                 id: 5,
-                name: 'Pizza 5',
-                description: 'Queso + Pollo + Piña',
+                name: 'Tres Carnes',
+                description: 'Carne, Pollo, Tocineta',
                 basePrice: {
                     sm: 24000,
                     m: 34000,
@@ -211,8 +211,8 @@
             },
             {
                 id: 6,
-                name: 'Pizza 6',
-                description: 'Queso + Pollo + Atun',
+                name: 'Thai',
+                description: 'Pollo, Tocineta, Verduras sofritas, Salsa Teriyaki',
                 basePrice: {
                     sm: 25000,
                     m: 35000,
@@ -227,8 +227,8 @@
             },
             {
                 id: 7,
-                name: 'Pizza 7',
-                description: 'Queso + Pollo + Pimienta',
+                name: 'Bechamel',
+                description: 'Pollo, Champiñones, Salsa Bechamel',
                 basePrice: {
                     sm: 26000,
                     m: 36000,
@@ -243,12 +243,12 @@
             },
             {
                 id: 8,
-                name: 'Pizza 8',
-                description: 'Queso + Pollo + Carne',
+                name: 'Marinera',
+                description: 'Atún, Camarones, Palomitos, Salsa Casa',
                 basePrice: {
-                    sm: 27000,
-                    m: 37000,
-                    l: 57000
+                    sm: 10000,
+                    m: 15000,
+                    l: 25000
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
@@ -259,12 +259,12 @@
             },
             {
                 id: 9,
-                name: 'Pizza 9',
-                description: 'Queso + Carne + Atun',
+                name: 'Napolitana',
+                description: 'Clásica tomate y orégano',
                 basePrice: {
-                    sm: 28000,
-                    m: 38000,
-                    l: 58000
+                    sm: 10000,
+                    m: 15000,
+                    l: 25000
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
@@ -275,12 +275,12 @@
             },
             {
                 id: 10,
-                name: 'Pizza 10',
-                description: 'Queso + Carne + Pimienta',
+                name: 'Colombiana',
+                description: 'Carne, Chorizo, Maíz, Pimentón',
                 basePrice: {
-                    sm: 29000,
-                    m: 39000,
-                    l: 59000
+                    sm: 10000,
+                    m: 15000,
+                    l: 35000
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
