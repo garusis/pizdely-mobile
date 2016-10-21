@@ -102,32 +102,38 @@
             queso: {
                 id: 1,
                 name: 'Queso',
-                image: 'assets/images/cheese.png'
+                image: 'assets/images/cheese.png',
+                price:1500
             },
             pinha: {
                 id: 2,
                 name: 'Piña',
-                image: 'assets/images/pineapple.png'
+                image: 'assets/images/pineapple.png',
+                price:1000
             },
             pollo: {
                 id: 3,
                 name: 'Pollo',
-                image: 'assets/images/chicken.png'
+                image: 'assets/images/chicken.png',
+                price:1000
             },
             atun: {
                 id: 4,
                 name: 'Atun',
-                image: 'assets/images/fish.png'
+                image: 'assets/images/fish.png',
+                price:2500
             },
             pimienta: {
                 id: 5,
-                name: 'Pimienta',
-                image: 'assets/images/pepper.png'
+                name: 'Chile',
+                image: 'assets/images/pepper.png',
+                price:1000
             },
             carne: {
                 id: 6,
                 name: 'Carne',
-                image: 'assets/images/steak.png'
+                image: 'assets/images/steak.png',
+                price:2000
             }
         };
         mockData.push({collection: 'Ingredient', data: _.values(ingredients)});
@@ -146,7 +152,7 @@
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.pinha.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza6.png'
             },
             {
                 id: 2,
@@ -161,7 +167,7 @@
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza1.png'
             },
             {
                 id: 3,
@@ -176,7 +182,7 @@
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.atun.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza7.png'
             },
             {
                 id: 4,
@@ -191,7 +197,7 @@
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.carne.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza2.png'
             },
             {
                 id: 5,
@@ -207,7 +213,7 @@
                     {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.pinha.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza9.png'
             },
             {
                 id: 6,
@@ -223,7 +229,7 @@
                     {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.atun.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza5.png'
             },
             {
                 id: 7,
@@ -239,7 +245,7 @@
                     {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.pimienta.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza8.png'
             },
             {
                 id: 8,
@@ -255,7 +261,7 @@
                     {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.carne.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza4.png'
             },
             {
                 id: 9,
@@ -271,27 +277,10 @@
                     {id: ingredients.carne.id, qty: {all:1, left:0, right:0}},
                     {id: ingredients.atun.id, qty: {all:1, left:0, right:0}}
                 ],
-                img: 'assets/images/pizza.png'
-            },
-            {
-                id: 10,
-                name: 'Colombiana',
-                description: 'Carne, Chorizo, Maíz, Pimentón',
-                basePrice: {
-                    sm: 10000,
-                    m: 15000,
-                    l: 35000
-                },
-                additionals: [
-                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
-                    {id: ingredients.carne.id, qty: {all:1, left:0, right:0}},
-                    {id: ingredients.pimienta.id, qty: {all:1, left:0, right:0}}
-                ],
-                img: 'assets/images/pizza.png'
+                img: 'assets/images/Pizza3.png'
             }
         ];
         mockData.push({collection: 'Product', data: products});
-
 
         return new MockService();
     }
