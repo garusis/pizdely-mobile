@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-content>
+        <div class="row main-message">
+            <div class="col text-center">
+                Elige sabor y tamaño
+            </div>
+        </div>
+        <div class="row size-options">
+            <div class="col text-center option" ng-repeat="option in listProdCtrl.view.sizeOptions"
+                 ng-class="{selected: option.value === listProdCtrl.options.size}"
+                 ng-click="listProdCtrl.setSize(option)">{{::option.label}}
+            </div>
+        </div>
+        <div class="list products-list">
+            <a class="item item-thumbnail-right" ng-repeat="product in listProdCtrl.products" ng-click="listProdCtrl.addToOrder(product, listProdCtrl.options.size)">
+                <img ng-src="{{::product.img}}">
+                <h2>{{::product.name}}</h2>
+                <p>{{::product.description}}</p>
+                <p class="price" >{{product.basePrice[listProdCtrl.options.size] | currency : '$' : 0}}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
