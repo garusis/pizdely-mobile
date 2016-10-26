@@ -296,7 +296,7 @@
                 basePrice: {
                     sm: 10000,
                     m: 15000,
-                    l: 35000
+                    l: 35000sdfsddsfdsfsdfs
                 },
                 additionals: [
                     {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
