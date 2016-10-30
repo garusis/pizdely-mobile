@@ -241,10 +241,13 @@ module.exports = function (ENV) {
     }
 
     function htmlTemplates() {
+        console.log("tasks.js:244 =",ENV.app.src.htmlTemplates);
+        console.log("tasks.js:244 =",ENV.app.dst.htmlTemplates);
         return htmlTask(ENV.app.src.htmlTemplates, ENV.app.dst.htmlTemplates);
     }
 
     function htmlIndex() {
+        var fs = require("fs");
         return htmlTask(ENV.app.src.htmlIndex, ENV.app.dst.htmlIndex);
     }
 

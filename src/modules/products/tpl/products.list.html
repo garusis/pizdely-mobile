@@ -1,11 +1,14 @@
 <ion-view>
     <ion-content>
         <div class="row main-message">
-            <div class="col text-center">
-                Elige sabor y tamaño
+            <div class="col text-center cursor-pointer" >
+                Elige sabor y tamaño assdasd
+                <button ng-click="listProdCtrl.showLoader()">b1</button>
             </div>
         </div>
         <div class="row size-options">
+            <div style="height: 400px;background: red">
+            </div>
             <div class="col text-center option" ng-repeat="option in listProdCtrl.view.sizeOptions"
                  ng-class="{selected: option.value === listProdCtrl.options.size}"
                  ng-click="listProdCtrl.setSize(option)">{{::option.label}}
