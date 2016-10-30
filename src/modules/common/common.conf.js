@@ -1,5 +1,3 @@
-(function () {
-
-    //this module will have common services and directives
+;!(function () {
     angular.module('pizdely.mobile.common', [])
 })();

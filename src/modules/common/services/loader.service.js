@@ -8,15 +8,7 @@
             scope = $scope;
         };
 
-        this.show = function(){
-            console.log("loader.service.js:12 =");
-            scope.show = true;
-        };
-
-        this.hiden = function(){
-            scope.show = false;
-        };
-
+        this.show = this.hidden = _.noop;
         return this;
     }
 

@@ -37,7 +37,7 @@ module.exports = {
         'src': {
             'less': ['./src/assets/less/vendors/educa.less'],
             'lessIncludes': ['./src/assets/less/vendors', './src/assets/less/vendors/bs-less', './src/assets/less/vendors/educa-less', './src/assets/less/vendors/other-less'],
-            'css': ['./src/assets/stylesheets/*.css', './tmp/css/*.css'],
+            'css': ['./src/assets/stylesheets/*.css', './tmp/css/*.css','./src/components/SpinKit/css/spinkit.css'],
             'fonts': ['./src/assets/fonts/*'],
             'js': ['./src/assets/js/*.js'],
             'concatJs': ['./tmp/js/bower_components.min.js', './tmp/js/vendors.min.js']

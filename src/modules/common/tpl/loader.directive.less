@@ -6,7 +6,31 @@ html,body,loader,.custom-gt-loader{
 .custom-gt-loader{
   background: rgba(238, 35, 63, .4);
   left: 0;
+  opacity: 0;
   position: absolute;
   top: 0;
   z-index: 1000;
+
+  -webkit-transition: all cubic-bezier(.45,.22,.41,.95) 250ms;
+  -moz-transition: all cubic-bezier(.45,.22,.41,.95) 250ms;
+  -ms-transition: all cubic-bezier(.45,.22,.41,.95) 250ms;
+  -o-transition: all cubic-bezier(.45,.22,.41,.95) 250ms;
+  transition: all cubic-bezier(.45,.22,.41,.95) 250ms;
+}
+
+.custom-gt-loader.full-opactity{
+  opacity: 1;
+  text-align: center;
+}
+
+.custom-gt-animation-loader{
+  .sk-cube:before{
+    background-color: #FFE66D;
+  }
+}
+
+.center-vertical{
+  position: relative;
+  top:  ~"calc( 50% - 60px )";
+  margin: 0 auto;
 }
