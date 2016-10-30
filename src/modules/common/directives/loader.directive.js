@@ -5,9 +5,9 @@
     var controllerDirective = function($scope,$timeout){
 
         var availableColor = {
-            red : "rgba(238, 35, 63, .4)",
-            green : "rgba(150, 203, 93, .4)",
-            blue : "rgba(59, 90, 127, .4)"
+            red : "rgba(238, 35, 63, .85)",
+            green : "rgba(150, 203, 93, .85)",
+            blue : "rgba(59, 90, 127, .85)"
         };
 
         $scope.show = false;
@@ -25,7 +25,7 @@
                 $scope.show = false;
             },250);
         };
-        
+
         if($scope.color && _.has(availableColor,$scope.color)){
             $scope.rgbaColor  = availableColor[$scope.color];
         }else{
@@ -40,9 +40,10 @@
         return {
             scope : {
                 show : "@",
-                color : "@"
+                color : "@",
+                text : '='
             },
-            template : '<div ng-if="show" ng-style="{ \'background-color\' : rgbaColor }" ng-class="{ \'full-opactity\' : fullOpacity  }" class="custom-gt-loader"><div class="center-vertical">'+ animation +'</div></div>',
+            template : '<div ng-if="show" ng-style="{ \'background-color\' : rgbaColor }" ng-class="{ \'full-opactity\' : fullOpacity  }" class="custom-gt-loader"><div class="center-vertical"><h3 ng-bind="text"></h3>'+ animation +'</div></div>',
             controller : [ '$scope', '$timeout' , controllerDirective ],
             link : function (scope,element,attrs) {
                 Loader.show = scope.showLoader;
