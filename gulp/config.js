@@ -20,7 +20,9 @@ module.exports = {
     'copy': {
         'src': ['./src/.htaccess'],
         'base': './src',
-        'dst': './dist'
+        'dst': './dist',
+        'assets' : './src/assets/**/*.*',
+        'assetsDst' : './dist/assets/'
     },
     'bower': {
         'base': './src/components',

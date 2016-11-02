@@ -25,7 +25,7 @@
             Loader.show();
 
             $timeout(function(){
-                Loader.hidden();    
+                Loader.hidden();
             },3000);
         };
 

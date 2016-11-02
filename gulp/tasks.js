@@ -249,6 +249,13 @@ module.exports = function (ENV) {
         return htmlTask(ENV.app.src.htmlIndex, ENV.app.dst.htmlIndex);
     }
 
+    function moveAssets(){
+        gulp.src(ENV.copy.assets,{ base : '' })
+            .pipe(gulp.dest(ENV.copy.assetsDst));
+    }
+
+    gulp.task('move-assets',moveAssets);
+
     gulp.task('html-templates', htmlTemplates);
     gulp.task('html-index', htmlIndex);
 
@@ -293,7 +300,7 @@ module.exports = function (ENV) {
      */
     gulp.task('watch', ['watch:app-less', 'watch:app-js', 'watch:html-templates', 'watch:html-index']);
     gulp.task('buildAssets', ['build:clean', 'build:images', 'build:vendors', 'build:app', 'build:html', 'build:copy']);
-    gulp.task('default', ['buildAssets', 'watch', 'webserver']);
+    gulp.task('default', [ 'move-assets', 'buildAssets',  'watch', 'webserver']);
 
     /**
      * Task to run task and server as an specific environment.
