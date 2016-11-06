@@ -1,0 +1,119 @@
+.transition(@i) when (@i > 0 ){
+  @timeAnimation : @i * 250;
+  @outTime : ~"@{timeAnimation}ms";
+  &:nth-child(@{i}){
+    .btn-circle-image{
+      transition: all cubic-bezier(0,.05,.27,1.22) @outTime;
+    }
+  }
+  .transition(@i - 1);
+}
+
+.my-custom-basic-transition(){
+  -webkit-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms;
+  -moz-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+  -ms-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+  -o-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+  transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+}
+
+select-area-pizza{
+  background: #FFF;
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  display: block;
+
+  -webkit-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms;
+  -moz-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+  -ms-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+  -o-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+  transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+
+  &.full-size{
+    height: 100%;
+    width: 100%;
+
+    .preview-product{
+      height: 100px !important;
+    }
+  }
+
+  .select-product-area{
+    position: relative;
+    max-height: 100%;
+    max-width: 100%;
+    background: #FFF;
+    position: relative;
+    z-index: 3;
+
+
+    .preview-product{
+      height: 30px;
+      .my-custom-basic-transition();
+    }
+
+    .image-container{
+      margin-top: .5rem;
+    }
+  }
+
+  .select-product-area-btns{
+    display: block;
+    width: 100%;
+    font-size: 0px;
+    margin-top: 1rem;
+
+    &.show-buttons{
+      .btn-circle-image{
+        opacity: 1;
+        top : 0;
+      }
+    }
+
+    .four-inline{
+      display: inline-block;
+      font-size: 12px;
+      text-align: center;
+      vertical-align: middle;
+      width: 24%;
+
+      .transition(4);
+
+      i.fa{
+        font-size: 20px;
+      }
+    }
+
+    .btn-circle-image{
+      height: 50px;
+      width: 50px;
+      border-radius: 100%;
+      background: transparent;
+      border: none;
+      opacity: 0;
+      padding: 0;
+      position: relative;
+      top: -6rem;
+
+      i{
+        &:not(.fa-times){
+          position : absolute;
+          bottom : -1.5rem;
+          left: 50%;
+          transform: ~"translateX(-50%)";
+        }
+      }
+
+      img{
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      &.cancel-btn{
+        background: #bdc3c7;
+      }
+    }
+  }
+}
+
