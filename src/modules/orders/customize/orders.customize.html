@@ -7,7 +7,7 @@
         <div class="row border-b">
             <div class="col text-center drop-container">
                 <img src="assets/images/pizza.png"/>
-                <div class="drop-area" ng-class="{active: cusOrderCtrl.view.dropActive}">
+                <div class="drop-area" >
                     <div class="drop-left" ng-click="cusOrderCtrl.addToPizza('left')"></div>
                     <div class="drop-right" ng-click="cusOrderCtrl.addToPizza('right')"></div>
                     <div class="drop-all" ng-click="cusOrderCtrl.addToPizza('all')"></div>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col ">
                 <div class="row view-options">
                     <div class="col text-center"
                          ng-class="{selected:cusOrderCtrl.view.currentItems === 'onMyPizza'}"
@@ -31,22 +31,31 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col custom-col-select-product">
+                        <select-area-pizza
+                                ng-if="cusOrderCtrl.view.curretSelected"
+                                ng-ingredient="cusOrderCtrl.view.curretSelected"
+                                action-left="cusOrderCtrl.addToPizza('left')"
+                                action-right="cusOrderCtrl.addToPizza('right')",
+                                action-all="cusOrderCtrl.addToPizza('all')">
+                        </select-area-pizza>
+
+
                         <div class="row additions m-t-1" ng-repeat="row in cusOrderCtrl.view.items|chunkBy:3">
                             <div class="col col-33 ingredient text-right" ng-repeat="item in row"
-                                 ng-class="{selected: cusOrderCtrl.view.curretSelected === item}"
                                  ng-click="!item.qty && cusOrderCtrl.toggleAddToPizza(item)">
                                 <span class="badge badge-assertive" ng-if="item.qty">{{item.qty.total}}</span>
-                                <div class="text-center">
-                                    <img ng-src="{{item.image}}">
+                                <div>
+                                    <div class="text-center">
+                                        <img class="preview-product-no-overflow" ng-src="{{item.image}}">
+                                    </div>
+                                    <div class="text-center">
+                                        {{item.name}}
+                                    </div>
+                                    <div class="text-center" style="font-weight: bold; color: #EE233F">
+                                        {{item.price | currency : '$' : 0}}
+                                    </div>
                                 </div>
-                                <div class="text-center">
-                                    {{item.name}}
-                                </div>
-                                <div class="text-center" style="font-weight: bold; color: #EE233F">
-                                    {{item.price | currency : '$' : 0}}
-                                </div>
-
                             </div>
                         </div>
                     </div>

@@ -20,7 +20,13 @@
                 templateUrl: 'templates/products.list.html',
                 controller: 'ListProductController',
                 controllerAs:'listProdCtrl'
-            });
+            })
+            .state('home.products.test',{
+                url : 'test/',
+                template : '<h1>hola que haceee!</h1>'
+            })
+        ;
+
     }
 
     module.config($config);

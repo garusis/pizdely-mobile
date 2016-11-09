@@ -35,6 +35,7 @@
         cusOrderCtrl.toggleAddToPizza = function (item) {
             cusOrderCtrl.view.curretSelected = cusOrderCtrl.view.curretSelected === item ? null : item;
             cusOrderCtrl.view.dropActive = !!cusOrderCtrl.view.curretSelected;
+
         };
 
         cusOrderCtrl.addToPizza = function (area) {
@@ -55,6 +56,7 @@
                 cusOrderCtrl.selectView('onMyPizza');
                 cusOrderCtrl.view.firstItemAdded = false;
             }
+            cusOrderCtrl.order.total += newAdditional.price;
             ionicToast.show('Se ha añadido '+additional.name + ' a tu pizza', 'top', false, 2500);
         };
 

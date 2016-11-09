@@ -1,0 +1,36 @@
+<button class="cancel-btn" ng-class="{ 'full' : showCloseBtn,'jello animated' :  animateCloseBtn }" ng-click="clearSelect()">
+    <i class="fa fa-times"></i>
+</button>
+
+<div class="select-product-area ingredient text-right  ">
+    <div >
+        <div class="text-center image-container">
+            <img class="preview-product" ng-src="{{ngIngredient.image}}">
+        </div>
+        <div class="text-center" ng-bind="::ngIngredient.name"></div>
+        <div class="text-center" style="font-weight: bold; color: #EE233F" ng-bind="::(ngIngredient.price | currency : '$' : 0)"></div>
+    </div>
+</div>
+
+<div class="select-product-area-btns" ng-class="{ 'show-buttons' : showButtons }">
+    <div class="three-inline">
+        <button class="btn-circle-image" ng-click="actionLeft()" ng-class="{ 'animated rubberBand' : animations[0].includeAnimation }">
+            <img src="assets/images/izquierda.png" alt="Izq">
+            <i class="fa fa-long-arrow-left"></i>
+        </button>
+    </div>
+
+    <div class="three-inline">
+        <button class="btn-circle-image" ng-click="actionAll()" ng-class="{ 'animated rubberBand' : animations[1].includeAnimation }">
+            <img src="assets/images/llena.png" alt="">
+            <i class="fa fa-arrows-h"></i>
+        </button>
+    </div>
+
+    <div class="three-inline">
+        <button class="btn-circle-image" ng-click="actionRight()" ng-class="{ 'animated rubberBand' : animations[2].includeAnimation }">
+            <img src="assets/images/derecha.png" alt="">
+            <i class="fa fa-long-arrow-right"></i>
+        </button>
+    </div>
+</div>

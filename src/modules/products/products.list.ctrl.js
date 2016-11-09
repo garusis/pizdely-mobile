@@ -3,8 +3,8 @@
  */
 ;!(function (module) {
 
-    ListProductController.$inject = ['$scope', '$state', 'Product', 'Ingredient', 'Order'];
-    function ListProductController($scope, $state, Product, Ingredient, Order) {
+    ListProductController.$inject = ['$scope', '$state', 'Product', 'Ingredient', 'Order','Loader','$timeout','$rootScope'];
+    function ListProductController($scope, $state, Product, Ingredient, Order,Loader,$timeout,$rootScope) {
         var listProdCtrl = this;
 
         listProdCtrl.products = [];
@@ -19,6 +19,14 @@
 
         listProdCtrl.options = {
             size: listProdCtrl.view.sizeOptions[0].value
+        };
+
+        listProdCtrl.showLoader = function(){
+            Loader.show();
+
+            $timeout(function(){
+                Loader.hidden();
+            },3000);
         };
 
         listProdCtrl.setSize = function (option) {
