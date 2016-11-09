@@ -13,7 +13,10 @@
             _.forEach([.4,.8, 1.2,1.6],function(item,key){
                 var timeByTimeout = (item * 600) - 200;
                 $timeout(function(){
-                    $scope.animations[key] = { includeAnimation : true }
+                    $scope.animations[key] = { includeAnimation : true };
+                    if(key == 3){
+                        $scope.showCloseBtns();
+                    }
                 },timeByTimeout);
             });
         };
@@ -27,7 +30,23 @@
             $scope.showButtons = true;
             includeClassAnimation();
         };
-    }
+
+        $scope.showCloseBtns = function(){
+            async(function(){
+                $scope.showCloseBtn = true;
+                async(function(){
+                    $scope.animateCloseBtn = true;
+                },200);
+            },250);
+        };
+
+        var async = function(func,timeout){
+            timeout = timeout || 0;
+            $timeout(function(){
+                func();
+            },timeout);
+        };
+    };
 
     module.controller('selectAreaPizzaController', selectAreaPizzaController);
 

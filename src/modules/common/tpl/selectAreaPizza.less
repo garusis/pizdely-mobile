@@ -17,6 +17,12 @@
   transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
 }
 
+.reset(){
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 select-area-pizza{
   background: #FFF;
   height: 90px;
@@ -29,6 +35,30 @@ select-area-pizza{
   -ms-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
   -o-transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
   transition: all cubic-bezier(.42,.85,.63,1.07) 200ms ;
+
+
+
+  .cancel-btn{
+    background: #EE233F;
+    color: #FFF;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 4;
+    height: 0px;
+    width: 0px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,.6);
+    overflow: hidden;
+
+    .reset();
+    .my-custom-basic-transition();
+
+    &.full{
+      height: 30px;
+      width:  30px;
+    }
+  }
 
   &.full-size{
     height: 100%;
@@ -79,6 +109,24 @@ select-area-pizza{
       width: 24%;
 
       .transition(4);
+
+      i.fa{
+        font-size: 20px;
+      }
+    }
+
+    .three-inline{
+      display: inline-block;
+      font-size: 0px;
+      text-align: center;
+      vertical-align: middle;
+      width: 33%;
+
+      .transition(4);
+
+      *{
+        font-size: 14px;
+      }
 
       i.fa{
         font-size: 20px;
