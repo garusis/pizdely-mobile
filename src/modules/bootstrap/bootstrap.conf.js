@@ -28,5 +28,6 @@
     'angular.filter',
     'pizdely.mobile.mock',
     'pizdely.mobile.orders',
-    'pizdely.mobile.products'
+    'pizdely.mobile.products',
+    'pizdely.mobile.common'
 ]));
