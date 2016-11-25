@@ -29,5 +29,6 @@
     'pizdely.mobile.mock',
     'pizdely.mobile.orders',
     'pizdely.mobile.products',
-    'pizdely.mobile.common'
+    'pizdely.mobile.common',
+    'pizdely.mobile.location'
 ]));

@@ -1,0 +1,77 @@
+.bck-image{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+
+  &:after{
+    background: #000;
+    content: " ";
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0 ;
+    width: 100%;
+    z-index: 2;
+    transition: all cubic-bezier(0,.36,.69,.46) 600ms;
+  }
+
+  &.show:after{
+    opacity: 0.5;
+  }
+
+  .pizza-img{
+    height: 100%;
+    background-image: url("../assets/images/bck-1.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+  }
+
+
+  &+ .container-bck{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    top: 0px;
+
+    form{
+      width: 100%;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      box-sizing: initial;
+
+      section{
+        height: auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        p{
+          font-size: 28px;
+          line-height: 27px;
+          font-weight: 900;
+          color: #FFF;
+        }
+
+        .input-address{
+          background-color: rgba(0,0,0,.5);
+          border: 3px solid #FFF;
+          border-radius: 5px;
+          color: #FFF;
+          font-size: 20px;
+          max-width: 100%;
+          height: auto !important;
+          padding: 5px 14px;
+          width: 100%;
+        }
+
+      }
+
+    }
+
+
+  }
+}
