@@ -1,7 +1,7 @@
 /**
  * Created by garusis on 16/10/16.
  */
-;!(function (module) {
+;!(function (module) {fdsfdsfsdfsdfsdfsd
 
     MockFactory.$inject = ['$q', '$timeout'];
     function MockFactory($q, $timeout) {
