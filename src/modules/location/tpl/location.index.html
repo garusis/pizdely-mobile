@@ -1,23 +1,49 @@
 <ion-view>
     <ion-content>
-        <div class="bck-image" ng-class='{ "show" : animations.showBackground }'>
+        <div class="bck-image" ng-class='{ "show" : locationIndexCtrl.animations.showBackground }'>
             <div class="pizza-img">
             </div>
         </div>
 
         <div class="row container-bck">
-            <form>
+            <form ng-submit="locationIndexCtrl.sendAddress()">
                 <section>
-                    <p>Busca las pizzerias más cercanas a ti</p>
+                    <p class="title-section">Busca las pizzerias más cercanas a ti</p>
                     <article>
-                        <input type="text" placeholder="Ingresa tu Dirección" class="input-address">
-                        <button type="submit">
+                        <aside>
+
+                            <input type="text" required ng-model="locationIndexCtrl.textAddress" class="input-address" />
+                            <span class="label-input-custom">
+                                Dirección
+                            </span>
+                            <!---
+                            <div class="piz-col col-left">
+                                <select ng-model="locationIndexCtrl.address.comp1">
+                                    <option value="calle">Calle</option>
+                                    <option value="avenida">Avenida</option>
+                                </select>
+                            </div>
+
+                            <div class="piz-col col-right">
+                                <input ng-model="locationIndexCtrl.address.comp2" type="text">
+                                <span>#</span>
+
+                                <input ng-model="locationIndexCtrl.address.comp3" type="text">
+                                <span>-</span>
+                                <input ng-model="locationIndexCtrl.address.comp4" type="text">
+                            </div>
+
+                            -->
+
+                        </aside>
+
+                        <button type="submit"class="button button-find">
                             <i class="ion-android-search"></i>
                             <span> Buscar </span>
                         </button>
                     </article>
 
-                    <button type="button" class="button button-positive">
+                    <button ng-show="!locationIndexCtrl.objAddress.lat" type="button" ng-click="locationIndexCtrl.gps()" class="button button-positive button-gps">
                         <i class="ion-android-locate"></i>
                         <span>Ubicame</span>
                     </button>

@@ -1,22 +1,37 @@
 ;!(function (module) {
 
-    locationIndexController.$inject = ['$scope', '$timeout'];
-    function locationIndexController($scope, $timeout) {
+    locationIndexController.$inject = ['$scope', '$timeout','LocationService'];
+    function locationIndexController($scope, $timeout,LocationService) {
 
-        $scope.animations = {};
+        var ctrl = this;
+
+        ctrl.animations = {};
+        
+        ctrl.objAddress = {
+            address :  ""
+        };
+
+        ctrl.gps = function(){
+            LocationService.getCurrentPosition()
+                .then(function(position){
+                    ctrl.objAddress = position.getData();
+                })
+                .catch(function(err){
+                    alert(err);
+                });
+        };
+
+        ctrl.sendAddress = function(){
+            if(ctrl.textAddress){
+                ctrl.objAddress.address = ctrl.textAddress ; // texto ingresado por el usuario
+            }
+            console.log("locationIndex.ctrl.js:28 =",ctrl.objAddress);
+        };
 
 
         $timeout(function(){
-            console.log("locationIndex.ctrl.js:10 =");
-            $scope.animations.showBackground =  true;
-        },50);
-
-        var init = function(){
-          alert("yolo");
-        };
-
-        init();         
-        console.log("locationIndex.ctrl.js:14 =");
+            ctrl.animations.showBackground =  true;
+        },100);
     }
 
     module.controller('LocationIndexController', locationIndexController);

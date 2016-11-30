@@ -7,16 +7,16 @@
                 url: 'location/',
                 abstract : true,
                 views: {
-                    main : {
-                        templateUrl: 'templates/location.index.html'
+                    'main' : {
+                        templateUrl: 'templates/location.html'
                     }
                 }
             })
             .state('home.location.index', {
                 url: 'catch/',
-                controller: 'sasdsadsd',
-                controllerAs:'LocationIndexCtrl',
-                templateUrl: 'templates/location.index.html'
+                templateUrl: 'templates/location.index.html',
+                controller: 'LocationIndexController',
+                controllerAs:'locationIndexCtrl'
             });
 
     }
