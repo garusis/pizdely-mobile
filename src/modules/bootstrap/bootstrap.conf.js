@@ -15,7 +15,7 @@
         $urlRouterProvider
             .otherwise(function ($injector) {
                 var $state = $injector.get('$state');
-                return $state.go('home.products.list');
+                return $state.go('home.location.index');
             });
     }
 
