@@ -15,6 +15,8 @@
             LocationService.getCurrentPosition()
                 .then(function(position){
                     ctrl.objAddress = position.getData();
+                    cleaStreet();
+                    console.log("locationIndex.ctrl.js:18 =",ctrl.objAddress);
                 })
                 .catch(function(err){
                     alert(err);
@@ -26,6 +28,15 @@
                 ctrl.objAddress.address = ctrl.textAddress ; // texto ingresado por el usuario
             }
             console.log("locationIndex.ctrl.js:28 =",ctrl.objAddress);
+        };
+
+        var cleaStreet = function(){
+            var wordsOmit = ['Norte de Santander', 'Colombia',/( )+\,( )+/g, /\,$/];
+            _.forEach(wordsOmit,function(word){
+                ctrl.objAddress.address = ctrl.objAddress.address.replace(word,"");
+            });
+
+            ctrl.textAddress = ctrl.objAddress.address;
         };
 
 
