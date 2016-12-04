@@ -286,69 +286,16 @@
             {
                 id: 1,
                 name: 'Gambeta Pizza Club',
-                stars: 3,
-                img: 'assets/images/Pizza6.png'
+                location:'AV 1 #16 - 19 LA PLAYA',
+                img: 'assets/images/shops/gambetta-pizza-club.jpg',
+                response_time: '15'
             },
             {
                 id: 2,
-                name: 'Caesar',
-                description: 'Pollo, Lechuga, Champiñones, Pimentón, Aceitunas',
-                basePrice: {
-                    sm: 10000,
-                    m: 15000,
-                    l: 35000
-                },
-                additionals: [
-                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
-                    {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}}
-                ],
-                img: 'assets/images/Pizza1.png'
-            },
-            {
-                id: 3,
-                name: 'Campesina',
-                description: 'Chorizo, Tocineta, Maíz, Hogao',
-                basePrice: {
-                    sm: 10000,
-                    m: 15000,
-                    l: 25000
-                },
-                additionals: [
-                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
-                    {id: ingredients.atun.id, qty: {all:1, left:0, right:0}}
-                ],
-                img: 'assets/images/Pizza7.png'
-            },
-            {
-                id: 4,
-                name: 'San Siro',
-                description: 'Pollo, Jamón, Champiñones',
-                basePrice: {
-                    sm: 10000,
-                    m: 15000,
-                    l: 35000
-                },
-                additionals: [
-                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
-                    {id: ingredients.carne.id, qty: {all:1, left:0, right:0}}
-                ],
-                img: 'assets/images/Pizza2.png'
-            },
-            {
-                id: 5,
-                name: 'Tres Carnes',
-                description: 'Carne, Pollo, Tocineta',
-                basePrice: {
-                    sm: 24000,
-                    m: 34000,
-                    l: 54000
-                },
-                additionals: [
-                    {id: ingredients.queso.id, qty: {all:1, left:0, right:0}},
-                    {id: ingredients.pollo.id, qty: {all:1, left:0, right:0}},
-                    {id: ingredients.pinha.id, qty: {all:1, left:0, right:0}}
-                ],
-                img: 'assets/images/Pizza9.png'
+                name: "Chimpa's Pizza",
+                location:'AV 1E # 1-12 LOS FAROLES',
+                img: 'assets/images/shops/chimpas-pizza.jpg',
+                response_time: '10'
             }
         ];
         mockData.push({collection: 'Shop', data: shops});

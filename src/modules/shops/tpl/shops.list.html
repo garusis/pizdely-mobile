@@ -1,0 +1,17 @@
+<ion-view>
+    <ion-content>
+        <div class="row main-message">
+            <div class="col text-center cursor-pointer view-title">
+                Elige una pizzería
+            </div>
+        </div>
+        <div class="list Shopucts-list">
+            <a class="item item-thumbnail-right" ng-repeat="shop in listShopCtrl.shops" ng-click="listShopCtrl.selectShop(shop)">
+                <img ng-src="{{::shop.img}}">
+                <h2>{{::shop.name}}</h2>
+                <p>{{::shop.location}}</p>
+                <p class="price" >Aprox. {{shop.response_time}} min</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
