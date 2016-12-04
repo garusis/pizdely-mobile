@@ -1,7 +1,7 @@
 ;!(function (module) {
 
-    locationIndexController.$inject = ['$scope', '$timeout','LocationService'];
-    function locationIndexController($scope, $timeout,LocationService) {
+    locationIndexController.$inject = ['$scope','$rootScope', '$timeout','LocationService','$state','Loader'];
+    function locationIndexController($scope,$rootScope, $timeout,LocationService,$state,Loader) {
 
         var ctrl = this;
 
@@ -12,10 +12,13 @@
         };
 
         ctrl.gps = function(){
+            $rootScope.loaderText = 'Te estamos Ubicando';
+            Loader.show();
             LocationService.getCurrentPosition()
                 .then(function(position){
                     ctrl.objAddress = position.getData();
                     cleaStreet();
+                    Loader.hidden();
                     console.log("locationIndex.ctrl.js:18 =",ctrl.objAddress);
                 })
                 .catch(function(err){
@@ -28,6 +31,7 @@
                 ctrl.objAddress.address = ctrl.textAddress ; // texto ingresado por el usuario
             }
             console.log("locationIndex.ctrl.js:28 =",ctrl.objAddress);
+            $state.go("home.products.list");
         };
 
         var cleaStreet = function(){
