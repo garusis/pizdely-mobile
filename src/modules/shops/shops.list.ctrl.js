@@ -17,8 +17,8 @@
             },3000);
         };
 
-        listShopCtrl.selectShop = function(){
-            
+        listShopCtrl.selectShop = function(shopId){
+            $state.go('home.products.list', {shopId: shopId});
         };
 
 
