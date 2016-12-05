@@ -1,0 +1,54 @@
+<ion-view>
+    <ion-content>
+        <div class="bck-image" ng-class='{ "show" : locationIndexCtrl.animations.showBackground }'>
+            <div class="pizza-img">
+            </div>
+        </div>
+
+        <div class="row container-bck">
+            <form ng-submit="locationIndexCtrl.sendAddress()">
+                <section>
+                    <p class="title-section">Busca las pizzerias más cercanas a ti</p>
+                    <article>
+                        <aside>
+
+                            <input type="text" required ng-model="locationIndexCtrl.textAddress" class="input-address" placeholder="Ingresa tu dirección" />
+                            <!---
+                            <div class="piz-col col-left">
+                                <select ng-model="locationIndexCtrl.address.comp1">
+                                    <option value="calle">Calle</option>
+                                    <option value="avenida">Avenida</option>
+                                </select>
+                            </div>
+
+                            <div class="piz-col col-right">
+                                <input ng-model="locationIndexCtrl.address.comp2" type="text">
+                                <span>#</span>
+
+                                <input ng-model="locationIndexCtrl.address.comp3" type="text">
+                                <span>-</span>
+                                <input ng-model="locationIndexCtrl.address.comp4" type="text">
+                            </div>
+
+                            -->
+
+                        </aside>
+
+                        <button type="submit"class="button button-find">
+                            <i class="ion-android-search"></i>
+                            <span> Buscar </span>
+                        </button>
+                    </article>
+
+                    <button ng-show="!locationIndexCtrl.objAddress.lat" type="button" ng-click="locationIndexCtrl.gps()" class="button button-positive button-gps">
+                        <i class="ion-android-locate"></i>
+                        <span>Ubicame</span>
+                    </button>
+                </section>
+
+
+            </form>
+        </div>
+
+    </ion-content>
+</ion-view>

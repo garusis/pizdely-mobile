@@ -15,7 +15,7 @@
         $urlRouterProvider
             .otherwise(function ($injector) {
                 var $state = $injector.get('$state');
-                return $state.go('home.products.list');
+                return $state.go('home.location.index');
             });
     }
 
@@ -29,5 +29,7 @@
     'pizdely.mobile.mock',
     'pizdely.mobile.orders',
     'pizdely.mobile.products',
-    'pizdely.mobile.common'
+    'pizdely.mobile.shops',
+    'pizdely.mobile.common',
+    'pizdely.mobile.location'
 ]));
