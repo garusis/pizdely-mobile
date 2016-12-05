@@ -1,0 +1,154 @@
+.bck-image{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+
+  &:after{
+    background: #292F36;
+    content: " ";
+    height: 100%;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0 ;
+    width: 100%;
+    z-index: 2;
+    transition: all cubic-bezier(0,.36,.69,.46) 600ms;
+  }
+
+  &.show:after{
+    background: #000;
+    opacity: 0.5;
+  }
+
+  .pizza-img{
+    height: 100%;
+    background-image: url("../assets/images/bck-1.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+  }
+
+
+  &+ .container-bck{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    top: 0px;
+
+    form{
+      width: 100%;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      box-sizing: initial;
+
+      section{
+        height: auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        article{
+          background-color: rgba(0,0,0,.4);
+          border-radius: 6px;
+          padding: 2rem 15px;
+
+          aside{
+
+            .input-address{
+              text-align: left;
+              width: 100%;
+            }
+
+            span.label-input-custom{
+              font-size: 14px;
+              text-align: left;
+              width: 100%;
+              color: #ecf0f1;
+            }
+
+            &.inline-items{
+              font-size: 0px;
+
+              .piz-col{
+                font-size: 14px;
+                display : inline-block;
+              }
+            }
+
+            .piz-col{
+              width: 50%;
+            }
+
+            .col-left{
+              padding-right: 7.5px;
+            }
+            .col-right{
+              padding-left: 7.5px;
+            }
+
+            input{
+              background-color: #ecf0f1;
+              width: 30px;
+            }
+
+            select{
+              background-color: #ecf0f1;
+              height: 34px;
+              padding-top: 2px;
+              width: 100%
+            }
+
+            *{
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+          }
+
+          button{
+            background-color: #EE233F;
+            color : #ecf0f1;
+            margin-top: 1rem;
+            width: 100%;
+            font-size: 20px;
+          }
+
+
+        }
+
+        p{
+          font-size: 28px;
+          line-height: 27px;
+          font-weight: 900;
+          color: #ecf0f1;
+          margin-bottom: 1rem;
+        }
+
+        .input-address{
+          background-color: rgba(0,0,0,.5);
+          border: 3px solid #FFF;
+          border-radius: 40px;
+          color: #ecf0f1;
+          font-size: 20px;
+          max-width: 100%;
+          height: auto !important;
+          padding: 5px 14px;
+          width: 100%;
+        }
+
+
+        .button-gps{
+          font-size: 20px;
+          margin-top: 2rem;
+          width: 100%;
+        }
+      }
+
+    }
+
+
+  }
+}
